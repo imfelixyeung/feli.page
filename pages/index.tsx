@@ -18,7 +18,12 @@ export default function Home() {
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
-            <main>
+            <main
+                style={{
+                    display: "grid",
+                    placeItems: "center",
+                }}
+            >
                 <Container style={{ textAlign: "center" }}>
                     <Typography variant="h3">
                         Welcome to{" "}
