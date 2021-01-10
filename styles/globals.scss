@@ -17,6 +17,8 @@ a {
 }
 
 main {
+    margin-top: 32px;
+    margin-bottom: 32px;
     min-height: calc(100vh - 100px - 64px);
     display: grid;
     place-items: center;

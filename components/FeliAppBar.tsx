@@ -15,7 +15,7 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
         const isLast = index === crumbs.length - 1;
         const { href, display } = crumb;
         return (
-            <Link href={href}>
+            <Link href={href} key={href}>
                 <a>
                     <Typography
                         variant="h6"
