@@ -14,16 +14,18 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
     const breadcrumbs = crumbs.map((crumb, index, crumbs) => {
         const isLast = index === crumbs.length - 1;
         const { href, display } = crumb;
+        const content = (
+            <Typography
+                variant="h6"
+                style={{ color: isLast ? "#000000" : "#888888" }}
+            >
+                {display}
+            </Typography>
+        );
+        if (isLast) return content;
         return (
             <Link href={href} key={href}>
-                <a>
-                    <Typography
-                        variant="h6"
-                        style={{ color: isLast ? "#000000" : "#888888" }}
-                    >
-                        {display}
-                    </Typography>
-                </a>
+                <a>{content}</a>
             </Link>
         );
     });
