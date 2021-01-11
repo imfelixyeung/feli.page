@@ -8,16 +8,9 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import IconButton from "@material-ui/core/IconButton";
 import MenuIcon from "@material-ui/icons/Menu";
 import { createStyles, makeStyles, Theme } from "@material-ui/core/styles";
+import router from "next/router";
 
 import FeliIcon from "./FeliIcon";
-
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        iconButton: {
-            marginRight: theme.spacing(2),
-        },
-    })
-);
 
 interface Crumb {
     href: string;
@@ -25,8 +18,6 @@ interface Crumb {
 }
 
 export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
-    const uiStyles = useStyles();
-
     const breadcrumbs = crumbs.map((crumb, index, crumbs) => {
         const isLast = index === crumbs.length - 1;
         const { href, display } = crumb;
@@ -58,13 +49,14 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
             }}
         >
             <Toolbar>
-                <Link href="/">
-                    <IconButton className={uiStyles.iconButton}>
-                        <>
-                            <FeliIcon size={24} />
-                        </>
-                    </IconButton>
-                </Link>
+                <IconButton
+                    style={{
+                        marginRight: 16,
+                    }}
+                    onClick={() => router.push("/")}
+                >
+                    <FeliIcon size={24} />
+                </IconButton>
                 <Breadcrumbs
                     separator={<NavigateNextIcon fontSize="small" />}
                     maxItems={2}
