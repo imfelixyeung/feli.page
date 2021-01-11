@@ -21,8 +21,16 @@ export default function FeliFooter() {
                     background: "#fff",
                 }}
             >
-                <Container>
-                    <Grid container style={{ textAlign: "center" }}>
+                <Container
+                    style={{
+                        display: "flex",
+                        justifyContent: "center",
+                    }}
+                >
+                    <Grid
+                        container
+                        style={{ textAlign: "center", maxWidth: "300px" }}
+                    >
                         <Grid item xs={6}>
                             <Link href="/privacy">
                                 <a>Privacy Policy</a>
