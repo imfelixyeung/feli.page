@@ -22,7 +22,11 @@ export default function Home() {
             <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
             <FeliContent center>
                 <Container style={{ textAlign: "center" }}>
-                    <FeliIcon margin={16} />
+                    <Link href="/feli">
+                        <a>
+                            <FeliIcon margin={16} />
+                        </a>
+                    </Link>
                     <Typography variant="h3">
                         Welcome to{" "}
                         <Link href="/">
