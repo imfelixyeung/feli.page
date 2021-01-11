@@ -6,8 +6,8 @@ export default function FeliIcon({
     size = 128,
     margin = 0,
 }: {
-    size: number | string;
-    margin: number | string;
+    size?: number | string;
+    margin?: number | string;
 }) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
