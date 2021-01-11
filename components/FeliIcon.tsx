@@ -1,9 +1,9 @@
 import { useMouse } from "react-use";
 import { useRef } from "react";
+import moduleStyles from "../styles/FeliIcon.module.scss";
 
-export default function FeliIcon() {
+export default function FeliIcon({ size = 128, margin = 0 }) {
     const iconRef = useRef(null);
-    const iconSize = 128;
     const { elX, elW } = useMouse(iconRef);
     const offsetX = (elX - elW / 2) / 2;
 
@@ -35,12 +35,10 @@ export default function FeliIcon() {
                 className="hero-image"
                 id="feli.page"
                 xmlns="http://www.w3.org/2000/svg"
-                width={iconSize}
-                height={iconSize}
+                width={size}
+                height={size}
                 viewBox="0 0 336 336"
-                style={{
-                    margin: "16px",
-                }}
+                style={{ margin }}
             >
                 <g id="face">
                     <path
@@ -67,6 +65,7 @@ export default function FeliIcon() {
                         transform="translate(180 66) rotate(-90)"
                         fill="#f9a828"
                         style={styles.rightEye}
+                        className={moduleStyles.animateTransform}
                     ></path>
                     <path
                         id="eye-left"
@@ -74,6 +73,7 @@ export default function FeliIcon() {
                         transform="translate(90 66) rotate(-90)"
                         fill="#f9a828"
                         style={styles.leftEye}
+                        className={moduleStyles.animateTransform}
                     ></path>
                 </g>
                 <g id="mouth" transform="translate(68 178)">
@@ -88,6 +88,7 @@ export default function FeliIcon() {
                         transform="translate(90)"
                         fill="#f9a828"
                         style={styles.mouthTop}
+                        className={moduleStyles.animateTransform}
                     ></path>
                     <path
                         id="mouth-bottom"
@@ -95,6 +96,7 @@ export default function FeliIcon() {
                         transform="translate(90 10)"
                         fill="#f9a828"
                         style={styles.mouthBottom}
+                        className={moduleStyles.animateTransform}
                     ></path>
                 </g>
             </svg>
