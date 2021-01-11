@@ -1,15 +1,16 @@
+import FeliAppBar from "../../components/FeliAppBar";
+import FeliContent from "../../components/FeliContent";
+import FeliFooter from "../../components/FeliFooter";
+import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
-import Typography from "@material-ui/core/Typography";
-import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
+import Typography from "@material-ui/core/Typography";
 import fs from "fs";
 import Head from "next/head";
 import Link from "next/link";
 import path from "path";
 import ReactMarkdown from "react-markdown";
-import FeliFooter from "../../components/FeliFooter";
-import FeliAppBar from "../../components/FeliAppBar";
 
 const TERMS = `
 # Feli Page Terms of Service
@@ -59,7 +60,7 @@ export default function TermsOfService({}) {
     return (
         <>
             <Head>
-                <title>Feli Page</title>
+                <title>Terms of Service | Feli Page</title>
                 <link rel="icon" href="/favicon.png" />
             </Head>
             <FeliAppBar
@@ -68,14 +69,13 @@ export default function TermsOfService({}) {
                     { href: "/terms", display: "Terms of Service" },
                 ]}
             />
-
-            <main>
+            <FeliContent justifyText>
                 <Container>
                     <Typography>
                         <ReactMarkdown>{TERMS}</ReactMarkdown>
                     </Typography>
                 </Container>
-            </main>
+            </FeliContent>
             <FeliFooter />
         </>
     );

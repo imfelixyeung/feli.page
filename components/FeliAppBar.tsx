@@ -4,6 +4,7 @@ import Typography from "@material-ui/core/Typography";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import Link from "next/link";
+import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 
 interface Crumb {
     href: string;
@@ -18,6 +19,7 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
             <Typography
                 variant="h6"
                 style={{ color: isLast ? "#000000" : "#888888" }}
+                key={href}
             >
                 {display}
             </Typography>
@@ -41,7 +43,12 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
             }}
         >
             <Toolbar>
-                <Breadcrumbs>{breadcrumbs}</Breadcrumbs>
+                <Breadcrumbs
+                    separator={<NavigateNextIcon fontSize="small" />}
+                    maxItems={2}
+                >
+                    {breadcrumbs}
+                </Breadcrumbs>
             </Toolbar>
         </AppBar>
     );

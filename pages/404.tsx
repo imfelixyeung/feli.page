@@ -1,5 +1,7 @@
 import FeliAppBar from "../components/FeliAppBar";
+import FeliContent from "../components/FeliContent";
 import FeliFooter from "../components/FeliFooter";
+import styles404 from "../styles/404.module.scss";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -9,7 +11,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import Link from "next/link";
-import styles404 from "../styles/404.module.scss";
 
 export default function $404() {
     return (
@@ -24,12 +25,7 @@ export default function $404() {
                     { href: "/404", display: "404 Not Found" },
                 ]}
             />
-            <main
-                style={{
-                    display: "grid",
-                    placeItems: "center",
-                }}
-            >
+            <FeliContent center>
                 <Container className={styles404.container}>
                     <Typography variant="h4">404</Typography>
                     <Typography variant="subtitle1">
@@ -43,8 +39,7 @@ export default function $404() {
                         </a>
                     </Link>
                 </Container>
-            </main>
-
+            </FeliContent>
             <FeliFooter />
         </>
     );
