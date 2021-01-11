@@ -18,7 +18,6 @@ export default function TermsOfService({}) {
     const x = "            ";
     const xx = x + x + x;
     const array = xx.split("");
-    console.log(array.length);
     const feli = array.map((e, i) => {
         return (
             <Grid xs={2} key={i}>
@@ -26,7 +25,6 @@ export default function TermsOfService({}) {
             </Grid>
         );
     });
-    console.log({ feli });
     return (
         <>
             <Head>
