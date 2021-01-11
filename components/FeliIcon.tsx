@@ -2,7 +2,13 @@ import { useMouse } from "react-use";
 import { useState, useRef, useEffect } from "react";
 import moduleStyles from "../styles/FeliIcon.module.scss";
 
-export default function FeliIcon({ size = 128, margin = 0 }) {
+export default function FeliIcon({
+    size = 128,
+    margin = 0,
+}: {
+    size: number | string;
+    margin: number | string;
+}) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
     const { elX, elW } = useMouse(iconRef);

@@ -14,6 +14,7 @@ import path from "path";
 import ReactMarkdown from "react-markdown";
 
 export default function TermsOfService({}) {
+    const size = "95%";
     const x = "            ";
     const xx = x + x + x;
     const array = xx.split("");
@@ -21,7 +22,7 @@ export default function TermsOfService({}) {
     const feli = array.map((e, i) => {
         return (
             <Grid xs={2} key={i}>
-                <FeliIcon size={128} />
+                <FeliIcon size={size} />
             </Grid>
         );
     });
