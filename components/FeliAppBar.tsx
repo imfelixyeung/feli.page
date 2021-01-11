@@ -58,13 +58,13 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
             }}
         >
             <Toolbar>
-                <IconButton className={uiStyles.iconButton}>
-                    <Link href="/">
+                <Link href="/">
+                    <IconButton className={uiStyles.iconButton}>
                         <>
                             <FeliIcon size={24} />
                         </>
-                    </Link>
-                </IconButton>
+                    </IconButton>
+                </Link>
                 <Breadcrumbs
                     separator={<NavigateNextIcon fontSize="small" />}
                     maxItems={2}
