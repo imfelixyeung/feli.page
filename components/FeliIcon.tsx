@@ -1,13 +1,20 @@
 import { useMouse } from "react-use";
-import { useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import moduleStyles from "../styles/FeliIcon.module.scss";
 
 export default function FeliIcon({ size = 128, margin = 0 }) {
+    const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
     const { elX, elW } = useMouse(iconRef);
     const offsetX = (elX - elW / 2) / 2;
 
-    const clampedOffset = offsetX > 45 ? 45 : offsetX < -45 ? -45 : offsetX;
+    const clampedOffset = firstLoad
+        ? 45
+        : offsetX > 45
+        ? 45
+        : offsetX < -45
+        ? -45
+        : offsetX;
 
     const styles = {
         leftEye: {
@@ -27,6 +34,10 @@ export default function FeliIcon({ size = 128, margin = 0 }) {
             transform: `translate(${45 + clampedOffset}px, 10px)`,
         },
     };
+
+    useEffect(() => {
+        if (elX !== 0) setFirstLoad(false);
+    }, [elX]);
 
     return (
         <>
