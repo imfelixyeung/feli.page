@@ -1,6 +1,7 @@
 import FeliAppBar from "../components/FeliAppBar";
-import FeliFooter from "../components/FeliFooter";
 import FeliContent from "../components/FeliContent";
+import FeliFooter from "../components/FeliFooter";
+import FeliIcon from "../components/FeliIcon";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -21,6 +22,7 @@ export default function Home() {
             <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
             <FeliContent center>
                 <Container style={{ textAlign: "center" }}>
+                    <FeliIcon />
                     <Typography variant="h3">
                         Welcome to{" "}
                         <Link href="/">
