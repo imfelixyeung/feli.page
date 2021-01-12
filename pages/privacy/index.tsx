@@ -1,6 +1,7 @@
 import FeliAppBar from "../../components/FeliAppBar";
 import FeliContent from "../../components/FeliContent";
 import FeliFooter from "../../components/FeliFooter";
+import FeliHead from "../../components/FeliHead";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -36,10 +37,7 @@ This policy is effective as of 10 January 2021.
 export default function TermsOfService({ text }) {
     return (
         <>
-            <Head>
-                <title>Privacy Policy | Feli Page</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
+            <FeliHead title="Privacy Policy | Feli Page" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },

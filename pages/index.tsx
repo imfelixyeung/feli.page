@@ -1,3 +1,4 @@
+import FeliHead from "../components/FeliHead";
 import FeliAppBar from "../components/FeliAppBar";
 import FeliContent from "../components/FeliContent";
 import FeliFooter from "../components/FeliFooter";
@@ -15,10 +16,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <Head>
-                <title>Feli Page</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
+            <FeliHead title="Feli Page" />
             <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
             <FeliContent center>
                 <Container style={{ textAlign: "center" }}>

@@ -1,6 +1,7 @@
 import FeliAppBar from "../../components/FeliAppBar";
 import FeliContent from "../../components/FeliContent";
 import FeliFooter from "../../components/FeliFooter";
+import FeliHead from "../../components/FeliHead";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -59,10 +60,7 @@ By accessing the website at [https://feli.page](https://feli.page), you are agre
 export default function TermsOfService({}) {
     return (
         <>
-            <Head>
-                <title>Terms of Service | Feli Page</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
+            <FeliHead title="Terms of Service | Feli Page" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },

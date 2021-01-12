@@ -1,6 +1,7 @@
 import FeliAppBar from "../components/FeliAppBar";
 import FeliContent from "../components/FeliContent";
 import FeliFooter from "../components/FeliFooter";
+import FeliHead from "../components/FeliHead";
 import styles404 from "../styles/404.module.scss";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
@@ -10,16 +11,13 @@ import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
-import Link from "next/link";
 import Image from "next/image";
+import Link from "next/link";
 
 export default function $404() {
     return (
         <>
-            <Head>
-                <title>404 Page not found</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
+            <FeliHead title="Not Found | Feli Page" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },

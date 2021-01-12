@@ -1,4 +1,5 @@
 import FeliAppBar from "../../components/FeliAppBar";
+import FeliHead from "../../components/FeliHead";
 import FeliContent from "../../components/FeliContent";
 import FeliFooter from "../../components/FeliFooter";
 import FeliIcon from "../../components/FeliIcon";
@@ -27,10 +28,7 @@ export default function TermsOfService({}) {
     });
     return (
         <>
-            <Head>
-                <title>Feli | Feli Page</title>
-                <link rel="icon" href="/favicon.png" />
-            </Head>
+            <FeliHead title="Feli | Feli Page" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },
