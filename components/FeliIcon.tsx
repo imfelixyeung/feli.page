@@ -1,6 +1,6 @@
-import { useMouse } from "react-use";
 import { useState, useRef, useEffect } from "react";
 import moduleStyles from "../styles/FeliIcon.module.scss";
+import useCursor from "../hooks/useCursor";
 
 export default function FeliIcon({
     size = 128,
@@ -13,7 +13,7 @@ export default function FeliIcon({
 }) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
-    const { elX, elW } = useMouse(iconRef);
+    const { elX, elW } = useCursor(iconRef);
     const offsetX = (elX - elW / 2) / 2;
 
     const clampedOffset = fixed
