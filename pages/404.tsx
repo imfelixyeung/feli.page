@@ -11,6 +11,7 @@ import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function $404() {
     return (
@@ -27,11 +28,17 @@ export default function $404() {
             />
             <FeliContent center>
                 <Container className={styles404.container}>
-                    <Typography variant="h4">404</Typography>
-                    <Typography variant="subtitle1">
+                    <Image
+                        src="/assets/images/undraw_page_not_found.svg"
+                        layout="responsive"
+                        height={100}
+                        width={350}
+                        alt="404 Image"
+                    />
+                    <div style={{ height: 32 }}></div>
+                    <Typography variant="h5">
                         This page could not be found
                     </Typography>
-
                     <div style={{ height: 32 }}></div>
                     <Link href="/">
                         <a>
