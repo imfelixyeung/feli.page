@@ -1,3 +1,4 @@
+import styles from "../styles/FeliContent.module.scss";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -6,7 +7,6 @@ import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "next/link";
-import styles from "../styles/FeliContent.module.scss";
 
 export default function FeliContent({
     children,

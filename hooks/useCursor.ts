@@ -1,5 +1,4 @@
 import { RefObject, useEffect } from "react";
-
 import { useRafState } from "react-use";
 
 export interface State {

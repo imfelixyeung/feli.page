@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from "react";
-import moduleStyles from "../styles/FeliIcon.module.scss";
 import useCursor from "../hooks/useCursor";
+import moduleStyles from "../styles/FeliIcon.module.scss";
+import { useEffect, useRef, useState } from "react";
 
 export default function FeliIcon({
     size = 128,
