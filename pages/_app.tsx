@@ -1,25 +1,23 @@
 import "../styles/globals.scss";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import theme from "../theme/theme";
 import CssBaseline from "@material-ui/core/CssBaseline";
-
-const feliOrange = "#f9a825";
-const backgroundColor = "#222222";
-
-const theme = createMuiTheme({
-    palette: {
-        // type: "dark",
-        primary: { main: feliOrange },
-        // secondary: {
-        //     main: backgroundColor,
-        // },
-        background: {
-            // default: backgroundColor,
-            // paper: "#1e1e1e",
-        },
-    },
-});
+import { ThemeProvider } from "@material-ui/core/styles";
+import { useEffect } from "react";
+import { Workbox } from "workbox-window";
 
 function MyApp({ Component, pageProps }) {
+    useEffect(() => {
+        if (
+            !("serviceWorker" in navigator) ||
+            process.env.NODE_ENV !== "production"
+        ) {
+            console.warn("Progressive Web App support is disabled");
+            return;
+        }
+        const workbox = new Workbox("sw.js", { scope: "/" });
+        workbox.register();
+    }, []);
+
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline />
