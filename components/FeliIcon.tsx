@@ -5,16 +5,20 @@ import moduleStyles from "../styles/FeliIcon.module.scss";
 export default function FeliIcon({
     size = 128,
     margin = 0,
+    fixed = false,
 }: {
     size?: number | string;
     margin?: number | string;
+    fixed?: boolean;
 }) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
     const { elX, elW } = useMouse(iconRef);
     const offsetX = (elX - elW / 2) / 2;
 
-    const clampedOffset = firstLoad
+    const clampedOffset = fixed
+        ? 45
+        : firstLoad
         ? 45
         : offsetX > 45
         ? 45
