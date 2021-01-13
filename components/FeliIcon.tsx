@@ -2,6 +2,16 @@ import useCursor from "../hooks/useCursor";
 import moduleStyles from "../styles/FeliIcon.module.scss";
 import { useEffect, useRef, useState } from "react";
 
+const maxClampedOffset = {
+    X: 51,
+    Y: 6,
+};
+
+const defaultsClampedOffset = {
+    X: 45,
+    Y: 0,
+};
+
 export default function FeliIcon({
     size = 128,
     margin = 0,
@@ -13,35 +23,50 @@ export default function FeliIcon({
 }) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
-    const { elX, elW } = useCursor(iconRef);
+    const { elX, elY, elW, elH } = useCursor(iconRef);
     const offsetX = (elX - elW / 2) / 2;
+    const offsetY = (elY - elH / 2) / 16;
 
-    const clampedOffset = fixed
-        ? 45
+    const clampedOffsetX = fixed
+        ? defaultsClampedOffset.X
         : firstLoad
-        ? 45
-        : offsetX > 45
-        ? 45
-        : offsetX < -45
-        ? -45
+        ? defaultsClampedOffset.X
+        : offsetX > maxClampedOffset.X
+        ? maxClampedOffset.X
+        : offsetX < -maxClampedOffset.X
+        ? -maxClampedOffset.X
         : offsetX;
+
+    const clampedOffsetY = fixed
+        ? defaultsClampedOffset.Y
+        : firstLoad
+        ? defaultsClampedOffset.Y
+        : offsetY > maxClampedOffset.Y
+        ? maxClampedOffset.Y
+        : offsetY < -maxClampedOffset.Y
+        ? -maxClampedOffset.Y
+        : offsetY;
 
     const styles = {
         leftEye: {
-            transform: `translate(${
-                45 + clampedOffset
-            }px, 66px) rotate(-90deg)`,
+            transform: `translate(${45 + clampedOffsetX}px, ${
+                66 + clampedOffsetY
+            }px) rotate(-90deg)`,
         },
         rightEye: {
-            transform: `translate(${
-                135 + clampedOffset
-            }px, 66px) rotate(-90deg)`,
+            transform: `translate(${135 + clampedOffsetX}px, ${
+                66 + clampedOffsetY
+            }px) rotate(-90deg)`,
         },
         mouthTop: {
-            transform: `translate(${45 + clampedOffset}px, 0px)`,
+            transform: `translate(${
+                45 + clampedOffsetX
+            }px, ${clampedOffsetY}px)`,
         },
         mouthBottom: {
-            transform: `translate(${45 + clampedOffset}px, 10px)`,
+            transform: `translate(${45 + clampedOffsetX}px, ${
+                10 + clampedOffsetY
+            }px)`,
         },
     };
 
