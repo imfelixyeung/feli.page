@@ -40,7 +40,14 @@ export default function $404() {
                     <div style={{ height: 32 }}></div>
                     <Link href="/">
                         <a>
-                            <Typography variant="h6">Return Home</Typography>
+                            <Typography
+                                variant="h6"
+                                style={{
+                                    display: "inline-block",
+                                }}
+                            >
+                                Return Home
+                            </Typography>
                         </a>
                     </Link>
                 </Container>
