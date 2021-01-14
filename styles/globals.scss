@@ -30,6 +30,5 @@ header,
 footer,
 div {
     transition: background $transition-duration $transition-timing-function 0s,
-        border $transition-duration $transition-timing-function 0s,
-        color $transition-duration $transition-timing-function 0s !important;
+        border $transition-duration $transition-timing-function 0s !important;
 }
