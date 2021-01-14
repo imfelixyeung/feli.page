@@ -17,13 +17,15 @@ export default function FeliIcon({
     margin = 0,
     fixed = false,
 }: {
-    size?: number | string;
+    size?: number;
     margin?: number | string;
     fixed?: boolean;
 }) {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
-    const { elX, elY, elW, elH } = useCursor(iconRef);
+    const { elX, elY, elW, elH } = fixed
+        ? { elX: 0, elY: 0, elW: size, elH: size }
+        : useCursor(iconRef);
     const offsetX = (elX - elW / 2) / 2;
     const offsetY = (elY - elH / 2) / 16;
 
