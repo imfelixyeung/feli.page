@@ -69,7 +69,9 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
                     style={{
                         marginRight: 16,
                     }}
+                    color="primary"
                     onClick={() => router.push("/")}
+                    aria-label="return home"
                 >
                     <FeliIcon size={24} />
                 </IconButton>
@@ -82,7 +84,11 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
                 >
                     {breadcrumbs}
                 </Breadcrumbs>
-                <IconButton onClick={toggle}>
+                <IconButton
+                    onClick={toggle}
+                    aria-label="toggle theme"
+                    color="primary"
+                >
                     <Brightness4Icon />
                 </IconButton>
             </Toolbar>
