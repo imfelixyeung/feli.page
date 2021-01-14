@@ -11,7 +11,7 @@ enum Theme {
 
 const FeliThemeContext = createContext<any>({});
 
-const defaultTheme = Theme.Dark;
+const defaultTheme = Theme.Light;
 
 export const ThemeContextProvider = ({ children }) => {
     const [storageTheme, setStorageTheme] = useLocalStorage(
