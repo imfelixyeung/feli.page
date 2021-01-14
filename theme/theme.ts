@@ -1,20 +1,29 @@
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme } from "@material-ui/core/styles";
 
 const feliOrange = "#f9a825";
-const backgroundColor = "#222222";
 
-const theme = createMuiTheme({
+export const lightTheme = createMuiTheme({
     palette: {
-        // type: "dark",
         primary: { main: feliOrange },
-        // secondary: {
-        //     main: backgroundColor,
-        // },
-        background: {
-            // default: backgroundColor,
-            // paper: "#1e1e1e",
+        secondary: {
+            main: "#ffffff",
         },
+        background: {},
+        divider: "#eaeaea",
     },
 });
 
-export default theme;
+export const darkTheme = createMuiTheme({
+    palette: {
+        type: "dark",
+        primary: { main: "#135136" },
+        secondary: {
+            main: "#111111",
+        },
+        background: {
+            default: "#181818",
+            paper: "#1e1e1e",
+        },
+        divider: "#252525",
+    },
+});

@@ -1,3 +1,4 @@
+import { useFeliTheme } from "../providers/FeliThemeProvider";
 import AppBar from "@material-ui/core/AppBar";
 import Breadcrumbs from "@material-ui/core/Breadcrumbs";
 import Container from "@material-ui/core/Container";
@@ -6,19 +7,28 @@ import Paper from "@material-ui/core/Paper";
 import Toolbar from "@material-ui/core/Toolbar";
 import Typography from "@material-ui/core/Typography";
 import Link from "next/link";
+import { darkTheme, lightTheme } from "../theme/theme";
 
 export default function FeliFooter() {
+    const { isDark } = useFeliTheme();
+
     return (
         <>
             <footer
                 style={{
                     width: "100%",
                     height: "100px",
-                    borderTop: "1px solid #eaeaea",
+                    borderTop: `1px solid ${
+                        isDark
+                            ? darkTheme.palette.divider
+                            : lightTheme.palette.divider
+                    }`,
                     display: "flex",
                     justifyContent: "center",
                     alignItems: "center",
-                    background: "#fff",
+                    background: isDark
+                        ? darkTheme.palette.secondary.main
+                        : lightTheme.palette.secondary.main,
                 }}
             >
                 <Container

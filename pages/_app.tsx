@@ -1,15 +1,29 @@
 import "../styles/globals.scss";
-import theme from "../theme/theme";
 import CssBaseline from "@material-ui/core/CssBaseline";
-import { ThemeProvider } from "@material-ui/core/styles";
-import { useEffect } from "react";
+import React, { useEffect, useState } from "react";
+import {
+    InjectMuiTheme,
+    ThemeContextProvider,
+} from "../providers/FeliThemeProvider";
 
 function MyApp({ Component, pageProps }) {
+    const [isMounted, setIsMounted] = useState(false);
+
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
     return (
-        <ThemeProvider theme={theme}>
-            <CssBaseline />
-            <Component {...pageProps} />
-        </ThemeProvider>
+        <>
+            {isMounted && (
+                <ThemeContextProvider>
+                    <InjectMuiTheme>
+                        <CssBaseline />
+                        <Component {...pageProps} />
+                    </InjectMuiTheme>
+                </ThemeContextProvider>
+            )}
+        </>
     );
 }
 
