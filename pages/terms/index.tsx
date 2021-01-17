@@ -60,7 +60,7 @@ By accessing the website at [https://feli.page](https://feli.page), you are agre
 export default function TermsOfService({}) {
     return (
         <>
-            <FeliHead title="Terms of Service | Feli Page" />
+            <FeliHead title="Terms of Service" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },

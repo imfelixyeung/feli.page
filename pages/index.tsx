@@ -16,7 +16,7 @@ import Link from "next/link";
 export default function Home() {
     return (
         <>
-            <FeliHead title="Feli Page" />
+            <FeliHead />
             <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
             <FeliContent center>
                 <Container style={{ textAlign: "center" }}>

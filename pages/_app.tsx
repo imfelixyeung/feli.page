@@ -7,22 +7,20 @@ import {
 } from "../providers/FeliThemeProvider";
 
 function MyApp({ Component, pageProps }) {
-    const [isMounted, setIsMounted] = useState(false);
+    // const [isMounted, setIsMounted] = useState(false);
 
-    useEffect(() => {
-        setIsMounted(true);
-    }, []);
+    // useEffect(() => {
+    //     setIsMounted(true);
+    // }, []);
 
     return (
         <>
-            {isMounted && (
-                <ThemeContextProvider>
-                    <InjectMuiTheme>
-                        <CssBaseline />
-                        <Component {...pageProps} />
-                    </InjectMuiTheme>
-                </ThemeContextProvider>
-            )}
+            <ThemeContextProvider>
+                <InjectMuiTheme>
+                    <CssBaseline />
+                    <Component {...pageProps} />
+                </InjectMuiTheme>
+            </ThemeContextProvider>
         </>
     );
 }

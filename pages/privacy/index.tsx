@@ -37,7 +37,7 @@ This policy is effective as of 10 January 2021.
 export default function TermsOfService({ text }) {
     return (
         <>
-            <FeliHead title="Privacy Policy | Feli Page" />
+            <FeliHead title="Privacy Policy" />
             <FeliAppBar
                 crumbs={[
                     { href: "/", display: "Feli Page" },

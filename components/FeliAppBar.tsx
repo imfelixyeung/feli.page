@@ -13,6 +13,8 @@ import NavigateNextIcon from "@material-ui/icons/NavigateNext";
 import Link from "next/link";
 import router from "next/router";
 import { darkTheme, lightTheme } from "../theme/theme";
+import React from "react";
+import Tooltip from "@material-ui/core/Tooltip";
 
 interface Crumb {
     href: string;
@@ -65,16 +67,18 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
             }}
         >
             <Toolbar>
-                <IconButton
-                    style={{
-                        marginRight: 16,
-                    }}
-                    color="primary"
-                    onClick={() => router.push("/")}
-                    aria-label="return home"
-                >
-                    <FeliIcon size={24} />
-                </IconButton>
+                <Tooltip title="Return Home" aria-label="return home">
+                    <IconButton
+                        style={{
+                            marginRight: 16,
+                        }}
+                        color="primary"
+                        onClick={() => router.push("/")}
+                        aria-label="return home"
+                    >
+                        <FeliIcon size={24} />
+                    </IconButton>
+                </Tooltip>
                 <Breadcrumbs
                     separator={<NavigateNextIcon fontSize="small" />}
                     maxItems={2}
@@ -84,13 +88,15 @@ export default function FeliAppBar({ crumbs = [] }: { crumbs: Crumb[] }) {
                 >
                     {breadcrumbs}
                 </Breadcrumbs>
-                <IconButton
-                    onClick={toggle}
-                    aria-label="toggle theme"
-                    color="primary"
-                >
-                    <Brightness4Icon />
-                </IconButton>
+                <Tooltip title="Toggle Theme" aria-label="toggle theme">
+                    <IconButton
+                        onClick={toggle}
+                        aria-label="toggle theme"
+                        color="primary"
+                    >
+                        <Brightness4Icon />
+                    </IconButton>
+                </Tooltip>
             </Toolbar>
         </AppBar>
     );
