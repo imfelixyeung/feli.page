@@ -1,7 +1,7 @@
 import Content from "@/components/Content";
 import PageHead from "@/components/PageHead";
 import { promises as fs } from "fs";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import path from "path";
 import ReactMarkdown from "react-markdown";
 
@@ -20,7 +20,7 @@ const PrivacyPolicy = ({ text }) => {
     );
 };
 
-const getServerSideProps: GetServerSideProps = async () => {
+const getStaticProps: GetStaticProps = async () => {
     const data = await fs.readFile(
         path.join(process.cwd(), "markdown/privacy-policy.md")
     );
@@ -32,5 +32,5 @@ const getServerSideProps: GetServerSideProps = async () => {
     };
 };
 
-export { getServerSideProps };
+export { getStaticProps };
 export default PrivacyPolicy;
