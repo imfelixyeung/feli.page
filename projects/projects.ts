@@ -1,4 +1,4 @@
-import { FeliProject } from "../types/FeliProject";
+import { FeliProject } from "@/types/FeliProject";
 
 const projects: FeliProject[] = [
     {

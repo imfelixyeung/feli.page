@@ -1,35 +1,21 @@
-import FeliAppBar from "../components/FeliAppBar";
-import FeliContent from "../components/FeliContent";
-import FeliFooter from "../components/FeliFooter";
-import FeliHead from "../components/FeliHead";
-import FeliIcon from "../components/FeliIcon";
-import AppBar from "@material-ui/core/AppBar";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Head from "next/head";
-import Link from "next/link";
+import Content from "@/components/Content";
+import FeliIcon from "@/components/FeliIcon";
+import PageHead from "@/components/PageHead";
 
-export default function Home() {
+const Home = () => {
     return (
         <>
-            <FeliHead />
-            <FeliAppBar crumbs={[{ href: "/", display: "Feli Page" }]} />
-            <FeliContent center>
-                <Container style={{ textAlign: "center" }}>
+            <PageHead />
+            <Content center>
+                <div className="mt-8 flex flex-col items-center">
                     <FeliIcon margin={16} fixed />
-                    <Typography variant="h3">
-                        Welcome to{" "}
-                        <Link href="/">
-                            <a>Feli.Page!</a>
-                        </Link>
-                    </Typography>
-                </Container>
-            </FeliContent>
-            <FeliFooter />
+                    <h1>
+                        Welcome to <span className="text-feli">Feli.Page!</span>
+                    </h1>
+                </div>
+            </Content>
         </>
     );
-}
+};
+
+export default Home;

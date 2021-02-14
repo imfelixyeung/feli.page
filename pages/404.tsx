@@ -1,58 +1,33 @@
-import FeliAppBar from "../components/FeliAppBar";
-import FeliContent from "../components/FeliContent";
-import FeliFooter from "../components/FeliFooter";
-import FeliHead from "../components/FeliHead";
-import styles404 from "../styles/404.module.scss";
-import AppBar from "@material-ui/core/AppBar";
-import Breadcrumbs from "@material-ui/core/Breadcrumbs";
-import Container from "@material-ui/core/Container";
-import Grid from "@material-ui/core/Grid";
-import Paper from "@material-ui/core/Paper";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
-import Head from "next/head";
-import Image from "next/image";
+import Content from "@/components/Content";
+import PageHead from "@/components/PageHead";
 import Link from "next/link";
 
-export default function $404() {
+const $404 = () => {
     return (
         <>
-            <FeliHead title="Not Found | Feli Page" />
-            <FeliAppBar
-                crumbs={[
-                    { href: "/", display: "Feli Page" },
-                    { href: "/404", display: "404 Not Found" },
-                ]}
-            />
-            <FeliContent center>
-                <Container className={styles404.container}>
-                    <Image
-                        src="/assets/images/undraw_page_not_found.svg"
-                        layout="responsive"
-                        height={100}
-                        width={350}
-                        alt="404 Image"
-                    />
-                    <div style={{ height: 32 }}></div>
-                    <Typography variant="h5">
+            <PageHead title="Not Found" />
+            <Content center>
+                <div className="my-8 flex flex-col items-center">
+                    <div className="mx-8 max-w-md md:max-w-lg">
+                        <img
+                            className="w-full"
+                            src="/assets/images/undraw_page_not_found.svg"
+                            alt="404 Image"
+                        />
+                    </div>
+                    <div className="mt-8 text-2xl font-bold">
                         This page could not be found
-                    </Typography>
-                    <div style={{ height: 32 }}></div>
-                    <Link href="/">
-                        <a>
-                            <Typography
-                                variant="h6"
-                                style={{
-                                    display: "inline-block",
-                                }}
-                            >
+                    </div>
+                    <div className="mt-4 text-xl">
+                        <Link href="/">
+                            <a className="py-2 px-4 text-feli-darker hover:text-feli-dark active:text-feli transition-colors">
                                 Return Home
-                            </Typography>
-                        </a>
-                    </Link>
-                </Container>
-            </FeliContent>
-            <FeliFooter />
+                            </a>
+                        </Link>
+                    </div>
+                </div>
+            </Content>
         </>
     );
-}
+};
+export default $404;

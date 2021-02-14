@@ -1,5 +1,4 @@
-import useCursor from "../hooks/useCursor";
-import moduleStyles from "../styles/FeliIcon.module.scss";
+import useCursor from "@/hooks/useCursor";
 import { useEffect, useRef, useState } from "react";
 
 const maxClampedOffset = {
@@ -12,15 +11,13 @@ const defaultsClampedOffset = {
     Y: 0,
 };
 
-export default function FeliIcon({
-    size = 128,
-    margin = 0,
-    fixed = false,
-}: {
+interface Props {
     size?: number;
     margin?: number | string;
     fixed?: boolean;
-}) {
+}
+
+const FeliIcon = ({ size = 128, margin = 0, fixed = false }: Props) => {
     const [firstLoad, setFirstLoad] = useState(true);
     const iconRef = useRef(null);
     const { elX, elY, elW, elH } = fixed
@@ -54,21 +51,25 @@ export default function FeliIcon({
             transform: `translate(${45 + clampedOffsetX}px, ${
                 66 + clampedOffsetY
             }px) rotate(-90deg)`,
+            transition: "transform 250ms ease",
         },
         rightEye: {
             transform: `translate(${135 + clampedOffsetX}px, ${
                 66 + clampedOffsetY
             }px) rotate(-90deg)`,
+            transition: "transform 250ms ease",
         },
         mouthTop: {
             transform: `translate(${
                 45 + clampedOffsetX
             }px, ${clampedOffsetY}px)`,
+            transition: "transform 250ms ease",
         },
         mouthBottom: {
             transform: `translate(${45 + clampedOffsetX}px, ${
                 10 + clampedOffsetY
             }px)`,
+            transition: "transform 250ms ease",
         },
     };
 
@@ -113,7 +114,6 @@ export default function FeliIcon({
                         transform="translate(180 66) rotate(-90)"
                         fill="#f9a828"
                         style={styles.rightEye}
-                        className={moduleStyles.animateTransform}
                     ></path>
                     <path
                         id="eye-left"
@@ -121,7 +121,6 @@ export default function FeliIcon({
                         transform="translate(90 66) rotate(-90)"
                         fill="#f9a828"
                         style={styles.leftEye}
-                        className={moduleStyles.animateTransform}
                     ></path>
                 </g>
                 <g id="mouth" transform="translate(68 178)">
@@ -136,7 +135,6 @@ export default function FeliIcon({
                         transform="translate(90)"
                         fill="#f9a828"
                         style={styles.mouthTop}
-                        className={moduleStyles.animateTransform}
                     ></path>
                     <path
                         id="mouth-bottom"
@@ -144,10 +142,11 @@ export default function FeliIcon({
                         transform="translate(90 10)"
                         fill="#f9a828"
                         style={styles.mouthBottom}
-                        className={moduleStyles.animateTransform}
                     ></path>
                 </g>
             </svg>
         </>
     );
-}
+};
+
+export default FeliIcon;

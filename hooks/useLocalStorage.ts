@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 const PREFIX = "feli_page-";
 
-export default function useLocalStorage(key, initialValue) {
+const useLocalStorage = (key, initialValue) => {
     const prefixedKey = PREFIX + key;
     const [value, setValue] = useState(() => {
         const jsonValue = localStorage.getItem(prefixedKey);
@@ -16,4 +16,6 @@ export default function useLocalStorage(key, initialValue) {
     }, [prefixedKey, value]);
 
     return [value, setValue];
-}
+};
+
+export default useLocalStorage;

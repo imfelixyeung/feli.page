@@ -1,8 +1,10 @@
 import Head from "next/head";
-import { useFeliTheme } from "../providers/FeliThemeProvider";
 
-export default function FeliHead({ title }: { title?: string }) {
-    const { isDark } = useFeliTheme();
+interface Props {
+    title?: string;
+}
+
+const PageHead = ({ title }: Props) => {
     const displayTitle = title ? `${title} | Feli Page` : "Feli Page";
     return (
         <Head>
@@ -26,7 +28,9 @@ export default function FeliHead({ title }: { title?: string }) {
             />
             <meta name="apple-mobile-web-app-capable" content="yes" />
             <meta name="description" content="Feli Page" />
-            <meta name="theme-color" content={isDark ? "#000000" : "#f9a825"} />
+            <meta name="theme-color" content="#f9a825" />
         </Head>
     );
-}
+};
+
+export default PageHead;

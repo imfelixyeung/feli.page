@@ -1,28 +1,16 @@
-import "../styles/globals.scss";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import React, { useEffect, useState } from "react";
-import {
-    InjectMuiTheme,
-    ThemeContextProvider,
-} from "../providers/FeliThemeProvider";
+import Layout from "@/components/Layout";
+import "@/styles/globals.scss";
+import React from "react";
+import "tailwindcss/tailwind.css";
 
-function MyApp({ Component, pageProps }) {
-    // const [isMounted, setIsMounted] = useState(false);
-
-    // useEffect(() => {
-    //     setIsMounted(true);
-    // }, []);
-
+const MyApp = ({ Component, pageProps }) => {
     return (
         <>
-            <ThemeContextProvider>
-                <InjectMuiTheme>
-                    <CssBaseline />
-                    <Component {...pageProps} />
-                </InjectMuiTheme>
-            </ThemeContextProvider>
+            <Layout>
+                <Component {...pageProps} />
+            </Layout>
         </>
     );
-}
+};
 
 export default MyApp;
