@@ -1,6 +1,6 @@
 import Content from "@/components/Content";
 import PageHead from "@/components/PageHead";
-import fs from "fs/promises";
+import { promises as fs } from "fs";
 import { GetServerSideProps } from "next";
 import path from "path";
 import ReactMarkdown from "react-markdown";
