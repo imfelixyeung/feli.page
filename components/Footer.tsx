@@ -16,6 +16,11 @@ const Footer = () => {
                                 Terms of Service
                             </a>
                         </Link>
+                        <Link href="/contact">
+                            <a className="text-feli-darker hover:text-feli-dark active:text-feli dark:text-feli-lighter dark:hover:text-feli-light dark:active:text-feli transition-colors">
+                                Contact
+                            </a>
+                        </Link>
                     </div>
                 </div>
             </footer>
