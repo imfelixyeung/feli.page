@@ -98,7 +98,7 @@ const Contact = () => {
                                 </label>
                                 <button
                                     type="submit"
-                                    className={`mx-2 bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 ${
+                                    className={`mx-2 bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 select-none ${
                                         loading ? "animate-pulse" : ""
                                     }`}
                                 >
@@ -116,7 +116,7 @@ const Contact = () => {
                         <div className="w-full px-2">
                             <div className="h-1 bg-gray-400 rounded-full"></div>
                         </div>
-                        <span className="text-xl">Or</span>
+                        <span className="text-xl select-none">Or</span>
                         <div className="w-full px-2">
                             <div className="h-1 bg-gray-400 rounded-full"></div>
                         </div>
