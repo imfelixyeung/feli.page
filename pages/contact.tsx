@@ -61,7 +61,7 @@ const Contact = () => {
                                             setName(e.target.value)
                                         }
                                         value={name}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
+                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
                                         required
                                     />
                                 </label>
@@ -77,7 +77,7 @@ const Contact = () => {
                                             setEmail(e.target.value)
                                         }
                                         value={email}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
+                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
                                         required
                                     />
                                 </label>
@@ -92,13 +92,15 @@ const Contact = () => {
                                             setMessage(e.target.value)
                                         }
                                         value={message}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 py-4 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
+                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-4 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
                                         required
                                     />
                                 </label>
                                 <button
                                     type="submit"
-                                    className="bg-gray-700 hover:bg-gray-900 active:bg-gray-600 text-gray-50 hover:text-white active:text-white py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300"
+                                    className={`bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 ${
+                                        loading ? "animate-pulse" : ""
+                                    }`}
                                 >
                                     Send Message
                                 </button>
