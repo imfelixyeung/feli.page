@@ -47,11 +47,11 @@ const Contact = () => {
                 <div className="mt-8 flex flex-col items-center w-full">
                     <form onSubmit={submit} className="max-w-lg w-full">
                         <fieldset disabled={loading}>
-                            <h1>Contact</h1>
+                            <h1 className="mx-2">Contact</h1>
                             <div className="flex flex-col space-y-4">
                                 <label
                                     htmlFor="name"
-                                    className="flex flex-col max-w-xl"
+                                    className="flex flex-col max-w-xl mx-2"
                                 >
                                     <span className="text-lg">Name</span>
                                     <input
@@ -67,7 +67,7 @@ const Contact = () => {
                                 </label>
                                 <label
                                     htmlFor="email"
-                                    className="flex flex-col"
+                                    className="flex flex-col mx-2"
                                 >
                                     <span className="text-lg">Email</span>
                                     <input
@@ -83,7 +83,7 @@ const Contact = () => {
                                 </label>
                                 <label
                                     htmlFor="message"
-                                    className="flex flex-col"
+                                    className="flex flex-col mx-2"
                                 >
                                     <span className="text-lg">Message</span>
                                     <textarea
@@ -98,7 +98,7 @@ const Contact = () => {
                                 </label>
                                 <button
                                     type="submit"
-                                    className={`bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 ${
+                                    className={`mx-2 bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 ${
                                         loading ? "animate-pulse" : ""
                                     }`}
                                 >
