@@ -21,6 +21,7 @@
         "raw-loader": "^4.0.2",
         "react": "17.0.1",
         "react-dom": "17.0.1",
+        "react-icons": "^4.2.0",
         "react-markdown": "^5.0.3",
         "react-use": "^15.3.8",
         "sass": "^1.32.2",

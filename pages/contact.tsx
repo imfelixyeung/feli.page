@@ -1,6 +1,8 @@
 import Content from "@/components/Content";
 import PageHead from "@/components/PageHead";
 import { FormEvent, useState } from "react";
+import { FaInstagram } from "react-icons/fa";
+import { HiMail } from "react-icons/hi";
 
 const Contact = () => {
     const [name, setName] = useState("");
@@ -108,6 +110,31 @@ const Contact = () => {
                             </div>
                         </fieldset>
                     </form>
+                    <div className="or my-16 flex justify-items-stretch items-center w-full">
+                        <div className="w-full px-2">
+                            <div className="h-1 bg-gray-400 rounded-full"></div>
+                        </div>
+                        <span className="text-xl">Or</span>
+                        <div className="w-full px-2">
+                            <div className="h-1 bg-gray-400 rounded-full"></div>
+                        </div>
+                    </div>
+                    <div className="social flex space-x-4">
+                        <a
+                            aria-label="instagram"
+                            href="https://www.instagram.com/im.feli.page/"
+                            target="_blank"
+                        >
+                            <FaInstagram size={32} />
+                        </a>
+                        <a
+                            aria-label="instagram"
+                            href="mailto:contact@feli.page"
+                            target="_blank"
+                        >
+                            <HiMail size={32} />
+                        </a>
+                    </div>
                 </div>
             </Content>
         </>
