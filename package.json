@@ -6,7 +6,8 @@
         "dev": "next dev",
         "build": "next build",
         "postbuild": "next-sitemap",
-        "start": "next start"
+        "start": "next start",
+        "deploy": "git pull && npm i && npm run build && next start -p 8333"
     },
     "dependencies": {
         "@tailwindcss/typography": "^0.4.0",
