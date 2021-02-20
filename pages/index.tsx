@@ -9,7 +9,7 @@ const Home = () => {
             <Content center>
                 <div className="mt-8 flex flex-col items-center">
                     <FeliIcon margin={16} fixed />
-                    <h1>
+                    <h1 className="text-center">
                         Welcome to <span className="text-feli">Feli.Page!</span>
                     </h1>
                 </div>
