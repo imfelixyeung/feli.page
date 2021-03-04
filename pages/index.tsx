@@ -10,7 +10,7 @@ const Home = () => {
         <>
             <PageHead />
             <Content center>
-                <div className="mt-8 flex flex-col items-center">
+                <div className="flex flex-col items-center mt-8">
                     <FeliIcon margin={16} fixed />
                     <h1 className="text-center">
                         Welcome to <span className="text-feli">Feli.Page!</span>
@@ -27,7 +27,10 @@ const Home = () => {
                                 category,
                             } = project;
                             return (
-                                <div className="m-2 md:m-4 inline-block">
+                                <div
+                                    className="inline-block m-2 md:m-4"
+                                    key={href}
+                                >
                                     <AppPreviewCard
                                         {...{ name, image, href, category }}
                                     />
