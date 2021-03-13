@@ -2,6 +2,13 @@ import { FeliProject } from "@/types/FeliProject";
 
 const projects: FeliProject[] = [
     {
+        title: "Dictionary",
+        shortName: "Dictionary",
+        href: "https://dictionary.feli.page/",
+        description: "Dictionary",
+        category: ["Education"],
+    },
+    {
         title: "My Account",
         shortName: "My Account",
         href: "https://accounts.feli.page/",
