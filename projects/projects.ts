@@ -2,6 +2,13 @@ import { FeliProject } from "@/types/FeliProject";
 
 const projects: FeliProject[] = [
     {
+        title: "Calculate Pi",
+        shortName: "Pi",
+        href: "https://pi.feli.page/",
+        description: "Calculate Pi with infinite series",
+        category: ["Maths"],
+    },
+    {
         title: "Dictionary",
         shortName: "Dictionary",
         href: "https://dictionary.feli.page/",
