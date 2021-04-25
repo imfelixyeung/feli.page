@@ -10,8 +10,8 @@ const TermsOfService = ({ text }) => {
         <>
             <PageHead title="Terms of Service" />
             <Content justifyText>
-                <div className="my-8 bg-white dark:bg-gray-300 p-8 rounded-md">
-                    <article className="prose max-w-none">
+                <div className="py-8 my-8">
+                    <article className="prose max-w-none dark:filter dark:invert">
                         <ReactMarkdown>{text}</ReactMarkdown>
                     </article>
                 </div>
