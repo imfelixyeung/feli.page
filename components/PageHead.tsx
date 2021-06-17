@@ -8,6 +8,11 @@ const PageHead = ({ title }: Props) => {
     const displayTitle = title ? `${title} | Feli Page` : "Feli Page";
     return (
         <Head>
+            <script
+                data-ad-client="ca-pub-6956339669378024"
+                async
+                src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            ></script>
             <meta name="twitter:title" content={displayTitle} />
             <meta
                 name="twitter:image"
