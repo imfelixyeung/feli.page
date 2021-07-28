@@ -27,7 +27,7 @@
         "react-markdown": "^5.0.3",
         "react-use": "^15.3.8",
         "sass": "^1.32.2",
-        "tailwindcss": "^2.1.1",
+        "tailwindcss": "^2.2.7",
         "use-dark-mode": "^2.3.1"
     },
     "devDependencies": {
