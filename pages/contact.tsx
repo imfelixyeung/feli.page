@@ -1,5 +1,6 @@
 import Content from "@/components/Content";
 import PageHead from "@/components/PageHead";
+import TextField from "@/components/TextField";
 import { FormEvent, useState } from "react";
 import { FaInstagram } from "react-icons/fa";
 import { HiMail } from "react-icons/hi";
@@ -44,61 +45,44 @@ const Contact = () => {
         <>
             <PageHead title="Contact" />
             <Content center>
-                <div className="mt-8 flex flex-col items-center w-full">
-                    <form onSubmit={submit} className="max-w-lg w-full">
+                <div className="flex flex-col items-center w-full mt-8">
+                    <form onSubmit={submit} className="w-full max-w-lg">
                         <fieldset disabled={loading}>
                             <h1 className="mx-2">Contact</h1>
-                            <div className="flex flex-col space-y-4">
-                                <label
-                                    htmlFor="name"
-                                    className="flex flex-col max-w-xl mx-2"
-                                >
-                                    <span className="text-lg">Name</span>
-                                    <input
-                                        type="text"
-                                        id="name"
-                                        onChange={(e) =>
-                                            setName(e.target.value)
-                                        }
-                                        value={name}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
-                                        required
-                                    />
-                                </label>
-                                <label
-                                    htmlFor="email"
-                                    className="flex flex-col mx-2"
-                                >
-                                    <span className="text-lg">Email</span>
-                                    <input
-                                        type="email"
-                                        id="email"
-                                        onChange={(e) =>
-                                            setEmail(e.target.value)
-                                        }
-                                        value={email}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-2 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
-                                        required
-                                    />
-                                </label>
-                                <label
-                                    htmlFor="message"
-                                    className="flex flex-col mx-2"
-                                >
-                                    <span className="text-lg">Message</span>
-                                    <textarea
-                                        id="message"
-                                        onChange={(e) =>
-                                            setMessage(e.target.value)
-                                        }
-                                        value={message}
-                                        className="bg-gray-200 hover:bg-gray-300 focus:bg-gray-300 dark:bg-gray-700 dark:hover:bg-gray-600 dark:focus:bg-gray-600 py-4 px-4 rounded-md focus:outline-none ring-gray-400 focus:ring-4 transition"
-                                        required
-                                    />
-                                </label>
+                            <div className="flex flex-col mx-2 space-y-4">
+                                <TextField
+                                    placeholder="Name"
+                                    id="contactName"
+                                    type="text"
+                                    onChange={(e) =>
+                                        setName((e.target as any).value)
+                                    }
+                                    value={name}
+                                    required
+                                />
+                                <TextField
+                                    placeholder="Email"
+                                    id="contactEmail"
+                                    type="email"
+                                    onChange={(e) =>
+                                        setEmail((e.target as any).value)
+                                    }
+                                    value={email}
+                                    required
+                                />
+                                <TextField
+                                    placeholder="Message"
+                                    id="contactMessage"
+                                    onChange={(e) =>
+                                        setMessage((e.target as any).value)
+                                    }
+                                    value={message}
+                                    as="textarea"
+                                    required
+                                />
                                 <button
                                     type="submit"
-                                    className={`mx-2 bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 select-none ${
+                                    className={`bg-gray-700 hover:bg-gray-900 active:bg-gray-600 dark:bg-gray-200 dark:hover:bg-gray-300 dark:focus:bg-gray-300 text-gray-50 hover:text-white active:text-white dark:text-gray-900 dark:hover:text-black dark:active:text-black py-2 px-4 rounded-lg focus:outline-none ring-gray-400 focus:ring-4 transition disabled:bg-gray-300 select-none ${
                                         loading ? "animate-pulse" : ""
                                     }`}
                                 >
@@ -112,7 +96,7 @@ const Contact = () => {
                             </div>
                         </fieldset>
                     </form>
-                    <div className="or my-16 flex justify-items-stretch items-center w-full">
+                    <div className="flex items-center w-full my-16 or justify-items-stretch">
                         <div className="w-full px-2">
                             <div className="h-1 bg-gray-400 rounded-full"></div>
                         </div>
@@ -121,7 +105,7 @@ const Contact = () => {
                             <div className="h-1 bg-gray-400 rounded-full"></div>
                         </div>
                     </div>
-                    <div className="social flex space-x-4">
+                    <div className="flex space-x-4 social">
                         <a
                             aria-label="instagram"
                             href="https://www.instagram.com/im.feli.page/"
