@@ -6,13 +6,13 @@ const Footer = () => {
         <>
             <FooterBase>
                 <div className="flex space-x-6">
-                    <Link href="/privacy" passHref>
+                    <Link href="/privacy" passHref legacyBehavior>
                         <FooterLink>Privacy Policy</FooterLink>
                     </Link>
-                    <Link href="/terms" passHref>
+                    <Link href="/terms" passHref legacyBehavior>
                         <FooterLink>Terms of Service</FooterLink>
                     </Link>
-                    <Link href="/contact" passHref>
+                    <Link href="/contact" passHref legacyBehavior>
                         <FooterLink>Contact</FooterLink>
                     </Link>
                 </div>
