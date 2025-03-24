@@ -3,7 +3,7 @@ import React from "react";
 interface Props {
   href: string;
   name: string;
-  image: string;
+  image?: string;
   category?: string[];
 }
 
