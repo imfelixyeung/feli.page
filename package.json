@@ -10,8 +10,6 @@
     "deploy": "git pull && npm i && npm run build && next start -p 8333"
   },
   "dependencies": {
-    "@felipage/react-ui": "^0.3.8",
-    "@felipage/tailwind-feli": "^1.0.7",
     "@mdx-js/loader": "^3.1.0",
     "@mdx-js/react": "^3.1.0",
     "@next/mdx": "^15.2.4",
