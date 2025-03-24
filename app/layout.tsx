@@ -14,8 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Nectar Swipe",
-  description: "Just keep swiping!",
+  title: "Feli Page",
 };
 
 export default function RootLayout({
