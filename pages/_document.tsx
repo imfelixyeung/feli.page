@@ -1,17 +1,17 @@
 import Document, { Head, Html, Main, NextScript } from "next/document";
 
 class MyDocument extends Document<{}> {
-    render() {
-        return (
-            <Html>
-                <Head />
-                <body className="font-display bg-gray-50 dark:bg-dark transition-colors text-gray-700 dark:text-gray-200">
-                    <Main />
-                    <NextScript />
-                </body>
-            </Html>
-        );
-    }
+  render() {
+    return (
+      <Html>
+        <Head />
+        <body className="font-display dark:bg-dark bg-gray-50 text-gray-700 transition-colors dark:text-gray-200">
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
+  }
 }
 
 export default MyDocument;

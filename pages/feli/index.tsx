@@ -3,26 +3,26 @@ import FeliIcon from "@/components/FeliIcon";
 import PageHead from "@/components/PageHead";
 
 const FeliIcons = () => {
-    const x = "          ";
-    const xx = x + x + x;
-    const array = xx.split("");
-    const feli = array.map(() => {
-        return (
-            <div>
-                <FeliIcon />
-            </div>
-        );
-    });
+  const x = "          ";
+  const xx = x + x + x;
+  const array = xx.split("");
+  const feli = array.map(() => {
     return (
-        <>
-            <PageHead title="Feli | Feli Page" />
-            <Content>
-                <div className="flex flex-wrap gap-3 mt-8 px-2 items-center justify-center">
-                    {feli}
-                </div>
-            </Content>
-        </>
+      <div>
+        <FeliIcon />
+      </div>
     );
+  });
+  return (
+    <>
+      <PageHead title="Feli | Feli Page" />
+      <Content>
+        <div className="mt-8 flex flex-wrap items-center justify-center gap-3 px-2">
+          {feli}
+        </div>
+      </Content>
+    </>
+  );
 };
 
 export default FeliIcons;

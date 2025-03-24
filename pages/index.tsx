@@ -6,42 +6,32 @@ import projects from "projects/projects";
 import React from "react";
 
 const Home = () => {
-    return (
-        <>
-            <PageHead />
-            <Content center>
-                <div className="flex flex-col items-center mt-8">
-                    <FeliIcon margin={16} fixed />
-                    <h1 className="text-center">
-                        Welcome to <span className="text-feli">Feli.Page!</span>
-                    </h1>
-                </div>{" "}
-                <div className="my-10">
-                    {/* <h1 className="ml-2 md:ml-4">Apps</h1> */}
-                    <div className="flex flex-wrap justify-center">
-                        {projects.map((project) => {
-                            const {
-                                shortName: name,
-                                image,
-                                href,
-                                category,
-                            } = project;
-                            return (
-                                <div
-                                    className="inline-block m-2 md:m-4"
-                                    key={href}
-                                >
-                                    <AppPreviewCard
-                                        {...{ name, image, href, category }}
-                                    />
-                                </div>
-                            );
-                        })}
-                    </div>
+  return (
+    <>
+      <PageHead />
+      <Content center>
+        <div className="mt-8 flex flex-col items-center">
+          <FeliIcon margin={16} fixed />
+          <h1 className="text-center">
+            Welcome to <span className="text-feli">Feli.Page!</span>
+          </h1>
+        </div>{" "}
+        <div className="my-10">
+          {/* <h1 className="ml-2 md:ml-4">Apps</h1> */}
+          <div className="flex flex-wrap justify-center">
+            {projects.map((project) => {
+              const { shortName: name, image, href, category } = project;
+              return (
+                <div className="m-2 inline-block md:m-4" key={href}>
+                  <AppPreviewCard {...{ name, image, href, category }} />
                 </div>
-            </Content>
-        </>
-    );
+              );
+            })}
+          </div>
+        </div>
+      </Content>
+    </>
+  );
 };
 
 export default Home;

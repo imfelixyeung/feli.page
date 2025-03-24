@@ -4,27 +4,27 @@ import React from "react";
 import { useRouter } from "next/router";
 
 interface Props {
-    title?: string;
+  title?: string;
 }
 
 const AppBar = ({ title = "Feli Page" }: Props) => {
-    const router = useRouter();
+  const router = useRouter();
 
-    const goToMyAccount = () => {
-        router.push("https://accounts.feli.page");
-    };
+  const goToMyAccount = () => {
+    router.push("https://accounts.feli.page");
+  };
 
-    return (
-        <AppBarBase
-            title={title}
-            Icon={FeliIcon}
-            actions={
-                <>
-                    <Button onClick={goToMyAccount}>My Account</Button>
-                </>
-            }
-        />
-    );
+  return (
+    <AppBarBase
+      title={title}
+      Icon={FeliIcon}
+      actions={
+        <>
+          <Button onClick={goToMyAccount}>My Account</Button>
+        </>
+      }
+    />
+  );
 };
 
 export default AppBar;

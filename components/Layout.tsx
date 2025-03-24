@@ -3,17 +3,17 @@ import Footer from "@/components/Footer";
 import React, { ReactNode } from "react";
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 const Layout = ({ children }: Props) => {
-    return (
-        <>
-            <AppBar />
-            {children}
-            <Footer />
-        </>
-    );
+  return (
+    <>
+      <AppBar />
+      {children}
+      <Footer />
+    </>
+  );
 };
 
 export default Layout;
