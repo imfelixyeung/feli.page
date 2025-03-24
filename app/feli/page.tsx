@@ -6,9 +6,9 @@ const FeliIcons = () => {
   const x = "          ";
   const xx = x + x + x;
   const array = xx.split("");
-  const feli = array.map(() => {
+  const feli = array.map((_, index) => {
     return (
-      <div>
+      <div key={index}>
         <FeliIcon />
       </div>
     );

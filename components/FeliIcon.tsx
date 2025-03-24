@@ -1,3 +1,5 @@
+"use client";
+
 import useCursor from "@/hooks/useCursor";
 import { useEffect, useRef, useState } from "react";
 
