@@ -10,7 +10,7 @@ const Content = ({ children, center = false, justifyText = false }: Props) => {
   return (
     <>
       <main
-        className={`mx-auto min-h-screen max-w-6xl ${
+        className={`container min-h-screen ${
           center ? "flex flex-col items-center" : ""
         } ${justifyText ? "text-justify" : ""}`}
       >
