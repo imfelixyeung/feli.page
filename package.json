@@ -1,40 +1,45 @@
 {
-    "name": "feli.page",
-    "version": "0.1.0",
-    "private": true,
-    "scripts": {
-        "dev": "next dev",
-        "build": "next build",
-        "postbuild": "next-sitemap",
-        "start": "next start",
-        "deploy": "git pull && npm i && npm run build && next start -p 8333"
-    },
-    "dependencies": {
-        "@felipage/react-ui": "^0.3.8",
-        "@felipage/tailwind-feli": "^1.0.7",
-        "@tailwindcss/typography": "^0.5.9",
-        "autoprefixer": "^10.4.13",
-        "framer-motion": "^8.4.0",
-        "next": "13.1.1",
-        "next-connect": "^0.13.0",
-        "next-sitemap": "^3.1.45",
-        "nodemailer": "^6.8.0",
-        "postcss": "^8.4.21",
-        "raw-loader": "^4.0.2",
-        "react": "18.2.0",
-        "react-dom": "18.2.0",
-        "react-icons": "^4.7.1",
-        "react-markdown": "^8.0.4",
-        "react-use": "^17.4.0",
-        "sass": "^1.57.1",
-        "tailwindcss": "^3.2.4",
-        "use-dark-mode": "^2.3.1"
-    },
-    "devDependencies": {
-        "@types/node": "^18.11.18",
-        "@types/nodemailer": "^6.4.7",
-        "@types/react": "^18.0.26",
-        "joi": "^17.7.0",
-        "typescript": "^4.9.4"
+  "name": "feli.page",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --turbopack",
+    "build": "next build",
+    "postbuild": "next-sitemap",
+    "start": "next start",
+    "deploy": "git pull && npm i && npm run build && next start -p 8333"
+  },
+  "dependencies": {
+    "@felipage/react-ui": "^0.3.8",
+    "@felipage/tailwind-feli": "^1.0.7",
+    "@tailwindcss/typography": "^0.5.9",
+    "autoprefixer": "^10.4.13",
+    "framer-motion": "^8.4.0",
+    "next": "15.2.4",
+    "next-connect": "^0.13.0",
+    "next-sitemap": "^3.1.45",
+    "nodemailer": "^6.8.0",
+    "postcss": "^8.4.21",
+    "raw-loader": "^4.0.2",
+    "react": "19.0.0",
+    "react-dom": "19.0.0",
+    "react-icons": "^4.7.1",
+    "react-markdown": "^8.0.4",
+    "react-use": "^17.4.0",
+    "sass": "^1.57.1",
+    "tailwindcss": "^3.2.4",
+    "use-dark-mode": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/nodemailer": "^6.4.7",
+    "@types/react": "19.0.12",
+    "joi": "^17.7.0",
+    "typescript": "^4.9.4"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "19.0.12"
     }
+  }
 }
