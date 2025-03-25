@@ -39,8 +39,8 @@ const useMouse = (ref: RefObject<Element | null>): State => {
           width: elW,
           height: elH,
         } = ref.current.getBoundingClientRect();
-        const posX = left + window.pageXOffset;
-        const posY = top + window.pageYOffset;
+        const posX = left + window.scrollX;
+        const posY = top + window.scrollY;
         const elX = event.pageX - posX;
         const elY = event.pageY - posY;
 
@@ -58,11 +58,11 @@ const useMouse = (ref: RefObject<Element | null>): State => {
     };
 
     document.addEventListener("mousemove", moveHandler);
-    document.addEventListener("touchmove", moveHandler);
+    document.addEventListener("touchmove", moveHandler as any);
 
     return () => {
       document.removeEventListener("mousemove", moveHandler);
-      document.removeEventListener("touchmove", moveHandler);
+      document.removeEventListener("touchmove", moveHandler as any);
     };
   }, [ref]);
 

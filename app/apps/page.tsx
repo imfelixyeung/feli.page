@@ -2,7 +2,7 @@ import AppPreviewCard from "@/components/AppPreview/Card";
 import Content from "@/components/Content";
 import PageHead from "@/components/PageHead";
 import { Metadata } from "next";
-import projects from "projects/projects";
+import projects from "@/projects/projects";
 import React from "react";
 
 export const metadata: Metadata = {
