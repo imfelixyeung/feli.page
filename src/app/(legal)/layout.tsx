@@ -5,7 +5,9 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <Content justifyText>
       <div className="my-8 py-8">
-        <article className="prose max-w-none">{children}</article>
+        <article className="prose dark:prose-invert max-w-none">
+          {children}
+        </article>
       </div>
     </Content>
   );
