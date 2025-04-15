@@ -1,5 +1,6 @@
 import Content from "@/components/Content";
 import FeliIcon from "@/components/FeliIcon";
+import { buttonVariants } from "@/components/ui/button";
 import Link from "next/link";
 import React from "react";
 
@@ -14,7 +15,9 @@ const Home = () => {
           </h1>
         </div>
         <div className="mt-8">
-          <Link href="/apps">Browse Apps</Link>
+          <Link href="/apps" className={buttonVariants({ size: "lg" })}>
+            Browse Apps
+          </Link>
         </div>
       </Content>
     </>
